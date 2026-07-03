@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Build It Better</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Build It Better</h1>
+    <p>A kid-friendly engineering design tool</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Choose Your Mission</h2>
+      <select id="missionSelect">
+        <option value="bridge">Build a Bridge</option>
+        <option value="phone">Design a Phone Case</option>
+        <option value="toycar">Build a Toy Car</option>
+        <option value="bike">Design a Bike Frame</option>
+        <option value="playground">Design a Playground Slide</option>
+      </select>
+      <p id="missionDescription"></p>
+    </section>
+
+    <section class="card">
+      <h2>2. Choose Your Material</h2>
+      <select id="materialSelect"></select>
+    </section>
+
+    <section class="card">
+      <h2>3. What Matters Most?</h2>
+
+      <label>Strength: <span id="strengthValue">5</span></label>
+      <input type="range" id="strengthSlider" min="0" max="10" value="5">
+
+      <label>Light Weight: <span id="lightnessValue">5</span></label>
+      <input type="range" id="lightnessSlider" min="0" max="10" value="5">
+
+      <label>Stiffness: <span id="stiffnessValue">5</span></label>
+      <input type="range" id="stiffnessSlider" min="0" max="10" value="5">
+
+      <label>Flexibility: <span id="flexibilityValue">5</span></label>
+      <input type="range" id="flexibilitySlider" min="0" max="10" value="5">
+
+      <label>Low Cost: <span id="costValue">5</span></label>
+      <input type="range" id="costSlider" min="0" max="10" value="5">
+
+      <label>Sustainability: <span id="sustainabilityValue">5</span></label>
+      <input type="range" id="sustainabilitySlider" min="0" max="10" value="5">
+    </section>
+
+    <section class="card">
+      <h2>4. Test Your Design</h2>
+      <button id="testButton">Test My Design</button>
+      <div id="resultBox"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
