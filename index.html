@@ -52,11 +52,39 @@
       <input type="range" id="sustainabilitySlider" min="0" max="10" value="5">
     </section>
 
-    <section class="card">
-      <h2>4. Test Your Design</h2>
-      <button id="testButton">Test My Design</button>
-      <div id="resultBox"></div>
-    </section>
+<section class="card">
+  <h2>4. Test Your Design</h2>
+
+  <label for="modeSelect">Choose learning mode:</label>
+  <select id="modeSelect">
+    <option value="beginner">Beginner Mode</option>
+    <option value="engineer">Engineer Mode</option>
+  </select>
+
+  <button id="testButton">Test My Design</button>
+
+  <div id="resultBox"></div>
+</section>
+
+<section class="card">
+  <h2>5. Recommended Material</h2>
+  <button id="recommendButton">Find Best Material</button>
+  <div id="recommendBox"></div>
+</section>
+
+<section class="card">
+  <h2>6. Compare Two Materials</h2>
+
+  <label for="compareA">Material A:</label>
+  <select id="compareA"></select>
+
+  <label for="compareB">Material B:</label>
+  <select id="compareB"></select>
+
+  <button id="compareButton">Compare Materials</button>
+
+  <div id="compareBox"></div>
+</section>
   </main>
 
   <script src="script.js"></script>
