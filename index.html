@@ -6,15 +6,31 @@
   <title>Build It Better</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header>
-    <h1>Build It Better</h1>
-    <p>A kid-friendly engineering design tool</p>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Build It Better</h1>
+      <p>A kid-friendly engineering design tool</p>
+    </div>
   </header>
 
-  <main>
+  <main class="page">
+    <section class="intro-card">
+      <h2>Welcome, engineer.</h2>
+      <p>
+        Choose a design mission, pick a material, adjust what matters most,
+        and test whether your design works.
+      </p>
+      <p class="small-note">
+        This tool teaches engineering tradeoffs: the strongest material is not always the best material.
+      </p>
+    </section>
+
     <section class="card">
-      <h2>1. Choose Your Mission</h2>
+      <div class="section-label">Step 1</div>
+      <h2>Choose Your Mission</h2>
+
       <select id="missionSelect">
         <option value="bridge">Build a Bridge</option>
         <option value="phone">Design a Phone Case</option>
@@ -22,70 +38,134 @@
         <option value="bike">Design a Bike Frame</option>
         <option value="playground">Design a Playground Slide</option>
       </select>
-      <p id="missionDescription"></p>
+
+      <p id="missionDescription" class="description-text"></p>
     </section>
 
     <section class="card">
-      <h2>2. Choose Your Material</h2>
+      <div class="section-label">Step 2</div>
+      <h2>Choose Your Material</h2>
+
       <select id="materialSelect"></select>
     </section>
 
     <section class="card">
-      <h2>3. What Matters Most?</h2>
+      <div class="section-label">Step 3</div>
+      <h2>What Matters Most?</h2>
+      <p class="description-text">
+        Move the sliders to change the engineering priorities for your design.
+      </p>
 
-      <label>Strength: <span id="strengthValue">5</span></label>
-      <input type="range" id="strengthSlider" min="0" max="10" value="5">
+      <div class="slider-group">
+        <label for="strengthSlider">
+          Strength
+          <span id="strengthValue">5</span>
+        </label>
+        <input type="range" id="strengthSlider" min="0" max="10" value="5" />
+      </div>
 
-      <label>Light Weight: <span id="lightnessValue">5</span></label>
-      <input type="range" id="lightnessSlider" min="0" max="10" value="5">
+      <div class="slider-group">
+        <label for="lightnessSlider">
+          Light Weight
+          <span id="lightnessValue">5</span>
+        </label>
+        <input type="range" id="lightnessSlider" min="0" max="10" value="5" />
+      </div>
 
-      <label>Stiffness: <span id="stiffnessValue">5</span></label>
-      <input type="range" id="stiffnessSlider" min="0" max="10" value="5">
+      <div class="slider-group">
+        <label for="stiffnessSlider">
+          Stiffness
+          <span id="stiffnessValue">5</span>
+        </label>
+        <input type="range" id="stiffnessSlider" min="0" max="10" value="5" />
+      </div>
 
-      <label>Flexibility: <span id="flexibilityValue">5</span></label>
-      <input type="range" id="flexibilitySlider" min="0" max="10" value="5">
+      <div class="slider-group">
+        <label for="flexibilitySlider">
+          Flexibility
+          <span id="flexibilityValue">5</span>
+        </label>
+        <input type="range" id="flexibilitySlider" min="0" max="10" value="5" />
+      </div>
 
-      <label>Low Cost: <span id="costValue">5</span></label>
-      <input type="range" id="costSlider" min="0" max="10" value="5">
+      <div class="slider-group">
+        <label for="costSlider">
+          Low Cost
+          <span id="costValue">5</span>
+        </label>
+        <input type="range" id="costSlider" min="0" max="10" value="5" />
+      </div>
 
-      <label>Sustainability: <span id="sustainabilityValue">5</span></label>
-      <input type="range" id="sustainabilitySlider" min="0" max="10" value="5">
+      <div class="slider-group">
+        <label for="sustainabilitySlider">
+          Sustainability
+          <span id="sustainabilityValue">5</span>
+        </label>
+        <input type="range" id="sustainabilitySlider" min="0" max="10" value="5" />
+      </div>
     </section>
 
-<section class="card">
-  <h2>4. Test Your Design</h2>
+    <section class="card">
+      <div class="section-label">Step 4</div>
+      <h2>Test Your Design</h2>
 
-  <label for="modeSelect">Choose learning mode:</label>
-  <select id="modeSelect">
-    <option value="beginner">Beginner Mode</option>
-    <option value="engineer">Engineer Mode</option>
-  </select>
+      <label for="modeSelect" class="regular-label">Choose learning mode:</label>
+      <select id="modeSelect">
+        <option value="beginner">Beginner Mode</option>
+        <option value="engineer">Engineer Mode</option>
+      </select>
 
-  <button id="testButton">Test My Design</button>
+      <button id="testButton">Test My Design</button>
 
-  <div id="resultBox"></div>
-</section>
+      <div id="resultBox"></div>
+    </section>
 
-<section class="card">
-  <h2>5. Recommended Material</h2>
-  <button id="recommendButton">Find Best Material</button>
-  <div id="recommendBox"></div>
-</section>
+    <section class="card">
+      <div class="section-label">Step 5</div>
+      <h2>Recommended Material</h2>
+      <p class="description-text">
+        Let the tool find the best material based on your mission and slider choices.
+      </p>
 
-<section class="card">
-  <h2>6. Compare Two Materials</h2>
+      <button id="recommendButton">Find Best Material</button>
 
-  <label for="compareA">Material A:</label>
-  <select id="compareA"></select>
+      <div id="recommendBox"></div>
+    </section>
 
-  <label for="compareB">Material B:</label>
-  <select id="compareB"></select>
+    <section class="card">
+      <div class="section-label">Step 6</div>
+      <h2>Compare Two Materials</h2>
+      <p class="description-text">
+        Compare two materials side by side for the same mission and priorities.
+      </p>
 
-  <button id="compareButton">Compare Materials</button>
+      <label for="compareA" class="regular-label">Material A:</label>
+      <select id="compareA"></select>
 
-  <div id="compareBox"></div>
-</section>
+      <label for="compareB" class="regular-label">Material B:</label>
+      <select id="compareB"></select>
+
+      <button id="compareButton">Compare Materials</button>
+
+      <div id="compareBox"></div>
+    </section>
+
+    <section class="card learning-card">
+      <h2>What Are Engineering Tradeoffs?</h2>
+      <p>
+        Engineers make choices based on what the design needs to do. A material can be strong
+        but heavy, light but weak, cheap but less sustainable, or flexible but not stiff.
+      </p>
+      <p>
+        The goal is not always to find the “best” material overall. The goal is to find the
+        best material for a specific job.
+      </p>
+    </section>
   </main>
+
+  <footer>
+    <p>Build It Better | Engineering education project</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
