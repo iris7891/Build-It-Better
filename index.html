@@ -8,165 +8,273 @@
 </head>
 
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Build It Better</h1>
-      <p>A kid-friendly engineering design tool</p>
-    </div>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="brand">
+        <span class="brand-mark">BIB</span>
+        <span>Build It Better</span>
+      </div>
+
+      <div class="nav-links">
+        <button class="nav-button active" id="designPageButton">Design Lab</button>
+        <button class="nav-button" id="explorePageButton">Explore Results</button>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Engineering Design Simulator</p>
+        <h1>Choose a mission. Test a material. Improve your design.</h1>
+        <p>
+          Build It Better helps students explore how engineers choose materials based on
+          strength, weight, stiffness, flexibility, cost, and sustainability.
+        </p>
+      </div>
+
+      <div class="hero-panel">
+        <p class="panel-label">Current challenge</p>
+        <h3>Can you find the best material?</h3>
+        <p>
+          Try one design, test it, then compare it against a better option.
+        </p>
+      </div>
+    </section>
   </header>
 
   <main class="page">
-    <section class="intro-card">
-      <h2>Welcome, engineer.</h2>
-      <p>
-        Choose a design mission, pick a material, adjust what matters most,
-        and test whether your design works.
-      </p>
-      <p class="small-note">
-        This tool teaches engineering tradeoffs: the strongest material is not always the best material.
-      </p>
-    </section>
 
-    <section class="card">
-      <div class="section-label">Step 1</div>
-      <h2>Choose Your Mission</h2>
-
-      <select id="missionSelect">
-        <option value="bridge">Build a Bridge</option>
-        <option value="phone">Design a Phone Case</option>
-        <option value="toycar">Build a Toy Car</option>
-        <option value="bike">Design a Bike Frame</option>
-        <option value="playground">Design a Playground Slide</option>
-      </select>
-
-      <p id="missionDescription" class="description-text"></p>
-    </section>
-
-    <section class="card">
-      <div class="section-label">Step 2</div>
-      <h2>Choose Your Material</h2>
-
-      <select id="materialSelect"></select>
-    </section>
-
-    <section class="card">
-      <div class="section-label">Step 3</div>
-      <h2>What Matters Most?</h2>
-      <p class="description-text">
-        Move the sliders to change the engineering priorities for your design.
-      </p>
-
-      <div class="slider-group">
-        <label for="strengthSlider">
-          Strength
-          <span id="strengthValue">5</span>
-        </label>
-        <input type="range" id="strengthSlider" min="0" max="10" value="5" />
+    <!-- PAGE 1: DESIGN LAB -->
+    <section id="designPage" class="app-page active-page">
+      <div class="page-heading">
+        <p class="eyebrow">Design Lab</p>
+        <h2>Build your first design</h2>
+        <p>
+          Complete the first four steps to test one material for one engineering mission.
+        </p>
       </div>
 
-      <div class="slider-group">
-        <label for="lightnessSlider">
-          Light Weight
-          <span id="lightnessValue">5</span>
-        </label>
-        <input type="range" id="lightnessSlider" min="0" max="10" value="5" />
-      </div>
+      <section class="card">
+        <div class="step-row">
+          <span class="step-number">1</span>
+          <div>
+            <h3>Choose your mission</h3>
+            <p>Different objects need different material properties.</p>
+          </div>
+        </div>
 
-      <div class="slider-group">
-        <label for="stiffnessSlider">
-          Stiffness
-          <span id="stiffnessValue">5</span>
-        </label>
-        <input type="range" id="stiffnessSlider" min="0" max="10" value="5" />
-      </div>
+        <select id="missionSelect">
+          <option value="bridge">Build a Bridge</option>
+          <option value="phone">Design a Phone Case</option>
+          <option value="toycar">Build a Toy Car</option>
+          <option value="bike">Design a Bike Frame</option>
+          <option value="playground">Design a Playground Slide</option>
+        </select>
 
-      <div class="slider-group">
-        <label for="flexibilitySlider">
-          Flexibility
-          <span id="flexibilityValue">5</span>
-        </label>
-        <input type="range" id="flexibilitySlider" min="0" max="10" value="5" />
-      </div>
+        <p id="missionDescription" class="description-text"></p>
+      </section>
 
-      <div class="slider-group">
-        <label for="costSlider">
-          Low Cost
-          <span id="costValue">5</span>
-        </label>
-        <input type="range" id="costSlider" min="0" max="10" value="5" />
-      </div>
+      <section class="card">
+        <div class="step-row">
+          <span class="step-number">2</span>
+          <div>
+            <h3>Choose your material</h3>
+            <p>Pick one material to test in your design.</p>
+          </div>
+        </div>
 
-      <div class="slider-group">
-        <label for="sustainabilitySlider">
-          Sustainability
-          <span id="sustainabilityValue">5</span>
-        </label>
-        <input type="range" id="sustainabilitySlider" min="0" max="10" value="5" />
-      </div>
+        <select id="materialSelect"></select>
+      </section>
+
+      <section class="card">
+        <div class="step-row">
+          <span class="step-number">3</span>
+          <div>
+            <h3>Set your design priorities</h3>
+            <p>Move the sliders to decide what matters most.</p>
+          </div>
+        </div>
+
+        <div class="slider-grid">
+          <div class="slider-group">
+            <label for="strengthSlider">
+              Strength
+              <span id="strengthValue">5</span>
+            </label>
+            <input type="range" id="strengthSlider" min="0" max="10" value="5" />
+          </div>
+
+          <div class="slider-group">
+            <label for="lightnessSlider">
+              Light Weight
+              <span id="lightnessValue">5</span>
+            </label>
+            <input type="range" id="lightnessSlider" min="0" max="10" value="5" />
+          </div>
+
+          <div class="slider-group">
+            <label for="stiffnessSlider">
+              Stiffness
+              <span id="stiffnessValue">5</span>
+            </label>
+            <input type="range" id="stiffnessSlider" min="0" max="10" value="5" />
+          </div>
+
+          <div class="slider-group">
+            <label for="flexibilitySlider">
+              Flexibility
+              <span id="flexibilityValue">5</span>
+            </label>
+            <input type="range" id="flexibilitySlider" min="0" max="10" value="5" />
+          </div>
+
+          <div class="slider-group">
+            <label for="costSlider">
+              Low Cost
+              <span id="costValue">5</span>
+            </label>
+            <input type="range" id="costSlider" min="0" max="10" value="5" />
+          </div>
+
+          <div class="slider-group">
+            <label for="sustainabilitySlider">
+              Sustainability
+              <span id="sustainabilityValue">5</span>
+            </label>
+            <input type="range" id="sustainabilitySlider" min="0" max="10" value="5" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card result-card">
+        <div class="step-row">
+          <span class="step-number">4</span>
+          <div>
+            <h3>Test your design</h3>
+            <p>Run the simulation and see whether your material fits the job.</p>
+          </div>
+        </div>
+
+        <label for="modeSelect" class="regular-label">Learning mode</label>
+        <select id="modeSelect">
+          <option value="beginner">Beginner Mode</option>
+          <option value="engineer">Engineer Mode</option>
+        </select>
+
+        <button id="testButton" class="primary-button">Test My Design</button>
+
+        <div id="resultBox"></div>
+
+        <button id="goToExploreButton" class="secondary-button">
+          Go to Recommended Materials and Comparison
+        </button>
+      </section>
     </section>
 
-    <section class="card">
-      <div class="section-label">Step 4</div>
-      <h2>Test Your Design</h2>
+    <!-- PAGE 2: EXPLORE RESULTS -->
+    <section id="explorePage" class="app-page">
+      <div class="page-heading">
+        <p class="eyebrow">Explore Results</p>
+        <h2>Find better materials and compare tradeoffs</h2>
+        <p>
+          Use your same mission and slider choices to recommend or compare materials.
+        </p>
+      </div>
 
-      <label for="modeSelect" class="regular-label">Choose learning mode:</label>
-      <select id="modeSelect">
-        <option value="beginner">Beginner Mode</option>
-        <option value="engineer">Engineer Mode</option>
-      </select>
+      <section class="card">
+        <div class="step-row">
+          <span class="step-number">5</span>
+          <div>
+            <h3>Recommended material</h3>
+            <p>Let the tool calculate the strongest match for your current design priorities.</p>
+          </div>
+        </div>
 
-      <button id="testButton">Test My Design</button>
+        <button id="recommendButton" class="primary-button">Find Best Material</button>
 
-      <div id="resultBox"></div>
+        <div id="recommendBox"></div>
+      </section>
+
+      <section class="card">
+        <div class="step-row">
+          <span class="step-number">6</span>
+          <div>
+            <h3>Compare two materials</h3>
+            <p>See how two materials perform side by side for the same mission.</p>
+          </div>
+        </div>
+
+        <div class="compare-grid">
+          <div>
+            <label for="compareA" class="regular-label">Material A</label>
+            <select id="compareA"></select>
+          </div>
+
+          <div>
+            <label for="compareB" class="regular-label">Material B</label>
+            <select id="compareB"></select>
+          </div>
+        </div>
+
+        <button id="compareButton" class="primary-button">Compare Materials</button>
+
+        <div id="compareBox"></div>
+      </section>
+
+      <button id="backToDesignButton" class="secondary-button">
+        Back to Design Lab
+      </button>
     </section>
 
-    <section class="card">
-      <div class="section-label">Step 5</div>
-      <h2>Recommended Material</h2>
-      <p class="description-text">
-        Let the tool find the best material based on your mission and slider choices.
-      </p>
-
-      <button id="recommendButton">Find Best Material</button>
-
-      <div id="recommendBox"></div>
-    </section>
-
-    <section class="card">
-      <div class="section-label">Step 6</div>
-      <h2>Compare Two Materials</h2>
-      <p class="description-text">
-        Compare two materials side by side for the same mission and priorities.
-      </p>
-
-      <label for="compareA" class="regular-label">Material A:</label>
-      <select id="compareA"></select>
-
-      <label for="compareB" class="regular-label">Material B:</label>
-      <select id="compareB"></select>
-
-      <button id="compareButton">Compare Materials</button>
-
-      <div id="compareBox"></div>
-    </section>
-
-    <section class="card learning-card">
-      <h2>What Are Engineering Tradeoffs?</h2>
-      <p>
-        Engineers make choices based on what the design needs to do. A material can be strong
-        but heavy, light but weak, cheap but less sustainable, or flexible but not stiff.
-      </p>
-      <p>
-        The goal is not always to find the “best” material overall. The goal is to find the
-        best material for a specific job.
-      </p>
+    <section class="learning-strip">
+      <div>
+        <h3>What is the engineering idea?</h3>
+        <p>
+          Engineers do not just choose the strongest material. They balance tradeoffs:
+          strength, weight, stiffness, flexibility, cost, sustainability, and the purpose of the design.
+        </p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>Build It Better | Engineering education project</p>
+    <p>Build It Better · Engineering education project</p>
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+    const designPage = document.getElementById("designPage");
+    const explorePage = document.getElementById("explorePage");
+
+    const designPageButton = document.getElementById("designPageButton");
+    const explorePageButton = document.getElementById("explorePageButton");
+    const goToExploreButton = document.getElementById("goToExploreButton");
+    const backToDesignButton = document.getElementById("backToDesignButton");
+
+    function showDesignPage() {
+      designPage.classList.add("active-page");
+      explorePage.classList.remove("active-page");
+
+      designPageButton.classList.add("active");
+      explorePageButton.classList.remove("active");
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showExplorePage() {
+      explorePage.classList.add("active-page");
+      designPage.classList.remove("active-page");
+
+      explorePageButton.classList.add("active");
+      designPageButton.classList.remove("active");
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    designPageButton.addEventListener("click", showDesignPage);
+    explorePageButton.addEventListener("click", showExplorePage);
+    goToExploreButton.addEventListener("click", showExplorePage);
+    backToDesignButton.addEventListener("click", showDesignPage);
+  </script>
 </body>
 </html>
