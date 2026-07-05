@@ -1,62 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: #f4f7fb;
-  color: #1f2937;
+  color: #0f172a;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
 }
 
-header {
-  background: #2563eb;
+.hero {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
   text-align: center;
-  padding: 30px 20px;
+  padding: 48px 20px;
 }
 
-header h1 {
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
   margin: 0;
-  font-size: 42px;
+  font-size: 54px;
+  letter-spacing: 1px;
 }
 
-header p {
-  font-size: 18px;
+.hero p {
+  font-size: 22px;
+  margin: 14px 0 0;
 }
 
-main {
-  max-width: 850px;
-  margin: 30px auto;
+.page {
+  max-width: 900px;
+  margin: 36px auto;
   padding: 0 20px;
 }
 
+.intro-card,
 .card {
   background: white;
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 26px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
-h2 {
+.intro-card {
+  border-left: 8px solid #2563eb;
+}
+
+.card h2,
+.intro-card h2 {
   margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 28px;
 }
 
-select, button {
-  font-size: 18px;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #cbd5e1;
-  width: 100%;
-  margin-top: 8px;
-}
-
-label {
-  display: block;
-  margin-top: 18px;
+.section-label {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
   font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
-input[type="range"] {
+.description-text {
+  color: #334155;
+  font-size: 17px;
+}
+
+.small-note {
+  color: #64748b;
+  font-size: 15px;
+}
+
+select,
+button {
   width: 100%;
+  font-size: 18px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+select {
+  background: white;
+  color: #0f172a;
 }
 
 button {
@@ -65,24 +103,65 @@ button {
   border: none;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.2s ease;
 }
 
 button:hover {
   background: #15803d;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.regular-label {
+  display: block;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.slider-group {
+  margin-top: 20px;
+}
+
+.slider-group label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.slider-group span {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #2563eb;
 }
 
 #resultBox {
   margin-top: 20px;
   padding: 18px;
-  border-radius: 12px;
+  border-radius: 14px;
   background: #eef2ff;
   display: none;
 }
 
+#recommendBox,
+#compareBox {
+  margin-top: 20px;
+}
+
 .score {
-  font-size: 32px;
+  font-size: 38px;
   font-weight: bold;
   color: #2563eb;
+  margin: 0 0 10px;
 }
 
 .checklist {
@@ -90,6 +169,11 @@ button:hover {
   padding: 16px;
   background: #f8fafc;
   border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.checklist h3 {
+  margin-top: 0;
 }
 
 .check-item {
@@ -115,17 +199,28 @@ button:hover {
   border-radius: 10px;
 }
 
+.tradeoff-box h3 {
+  margin-top: 0;
+}
+
 .engineer-details {
   margin-top: 18px;
   padding: 16px;
   background: #ecfeff;
   border-radius: 10px;
+  border: 1px solid #bae6fd;
+}
+
+.engineer-details h3 {
+  margin-top: 0;
 }
 
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 18px;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 .comparison-table th,
@@ -137,6 +232,7 @@ button:hover {
 
 .comparison-table th {
   background: #dbeafe;
+  color: #1e3a8a;
 }
 
 .recommendation {
@@ -144,9 +240,51 @@ button:hover {
   padding: 18px;
   background: #dcfce7;
   border-radius: 12px;
+  border: 1px solid #86efac;
 }
 
-.small-note {
+.recommendation h3 {
+  margin-top: 0;
+}
+
+.learning-card {
+  background: #fefce8;
+  border-left: 8px solid #eab308;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
   color: #64748b;
   font-size: 15px;
+}
+
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .card h2,
+  .intro-card h2 {
+    font-size: 24px;
+  }
+
+  .page {
+    margin: 24px auto;
+  }
+
+  .intro-card,
+  .card {
+    padding: 22px;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    font-size: 14px;
+    padding: 8px;
+  }
 }
