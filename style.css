@@ -84,3 +84,69 @@ button:hover {
   font-weight: bold;
   color: #2563eb;
 }
+
+.checklist {
+  margin-top: 18px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.check-item {
+  padding: 8px 0;
+  font-size: 17px;
+}
+
+.pass {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.fail {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+.tradeoff-box {
+  margin-top: 18px;
+  padding: 16px;
+  background: #fff7ed;
+  border-left: 6px solid #f97316;
+  border-radius: 10px;
+}
+
+.engineer-details {
+  margin-top: 18px;
+  padding: 16px;
+  background: #ecfeff;
+  border-radius: 10px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  text-align: center;
+}
+
+.comparison-table th {
+  background: #dbeafe;
+}
+
+.recommendation {
+  margin-top: 18px;
+  padding: 18px;
+  background: #dcfce7;
+  border-radius: 12px;
+}
+
+.small-note {
+  color: #64748b;
+  font-size: 15px;
+}
